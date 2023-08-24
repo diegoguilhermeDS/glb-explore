@@ -54,4 +54,12 @@
     .input-base {
         @apply w-full h-[3rem] bg-[#f6f6f6] hover:bg-gray-200 px-4 border-2 border-gray-200 hover:border-gray-200 rounded outline-none focus:border-emerald-600 focus:text-emerald-900 focus:bg-gray-50;
     }
+
+    .menu {
+        @apply absolute -left-36 -bottom-[78px] flex flex-col w-48 rounded bg-white border-[1px] border-gray-300 transition-all duration-700 ease-in-out opacity-0 shadow-md;
+    }
+
+    .profile-icon {
+        @apply flex justify-center w-12 h-12 p-2 items-center border-2 border-slate-700 rounded-full bg-slate-900 cursor-pointer;
+    }
 }
