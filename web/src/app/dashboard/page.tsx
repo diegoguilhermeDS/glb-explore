@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "@/components/Button";
-import Card from "@/components/Card";
+import Link from "next/link";
 import { glbsFiles } from "@/mock/glbsByUser";
+import Card from "@/components/Card";
 
 export default function Dashboard() {
     return (
@@ -9,9 +9,9 @@ export default function Dashboard() {
             <section className="h-40 border-b-2 w-full">
                 <div className="h-full container mx-auto flex justify-between items-center">
                     <h5>Olá, nome_do_usuário</h5>
-                    <Button className="bg-amber-400 border-amber-400 hover:bg-amber-800 hover:border-amber-800 text-gray-900 hover:text-white">
+                    <Link href={"/upload"} className="button-base bg-violet-600 border-violet-600 hover:bg-violet-700 hover:border-violet-700 text-white shadow-md">
                         Adicionar arquivo
-                    </Button>
+                    </Link>
                 </div>
             </section>
             <section className="flex flex-col it gap-5 container mx-auto">
