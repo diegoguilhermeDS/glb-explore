@@ -89,7 +89,7 @@ const FormRegister = () => {
                     }
                 />
             </div>
-            <Button className="bg-emerald-400 border-emerald-400 hover:bg-emerald-800 hover:border-emerald-800 text-gray-900 hover:text-white">
+            <Button className="bg-emerald-400 border-emerald-400 hover:bg-emerald-800 hover:border-emerald-800 text-gray-900 hover:text-white shadow-md">
                 Criar a conta
             </Button>
             <span className="text-center">

@@ -60,7 +60,7 @@
     }
 
     .profile-icon {
-        @apply flex justify-center w-12 h-12 p-2 items-center border-2 border-slate-700 rounded-full bg-slate-900 cursor-pointer;
+        @apply flex justify-center w-12 h-12 p-2 items-center border-2 border-slate-700 rounded-full bg-slate-900 hover:bg-slate-700 cursor-pointer;
     }
 
     .link-nav {

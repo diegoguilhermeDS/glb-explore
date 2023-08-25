@@ -42,7 +42,7 @@ const Menu = () => {
     return (
         <div className="relative" ref={ref}>
             <div
-                className="profile-icon"
+                className="profile-icon group"
                 onClick={() => (
                     setOpenMenu(!openMenu),
                     setAnimationMenu(
@@ -52,7 +52,7 @@ const Menu = () => {
                     )
                 )}
             >
-                <BsFillPersonFill className="fill-white scale-[2.0]" />
+                <BsFillPersonFill className="fill-white scale-[2.0] group-hover:scale-[2.2]" />
             </div>
             <div
                 className={`menu ${
@@ -61,13 +61,14 @@ const Menu = () => {
                         : animationMenu == "close" && "animate-scale-out-center"
                 }`}
             >
-                <Button className="flex justify-center items-center border-0 text-sm tracking-wider font-medium hover:bg-gray-200 rounded-none">
+                <Button className="flex justify-center items-center border-0 text-sm tracking-wider font-medium hover:bg-gray-200 rounded-none" disabled={!openMenu}>
                     editar perfil
                 </Button>
                 <div className="w-full h-[1px] bg-slate-300"></div>
                 <Button
                     className="flex justify-center items-center border-0 text-sm tracking-wider font-medium hover:bg-gray-200 rounded-none"
                     onClick={logout}
+                    disabled={!openMenu}
                 >
                     sair
                 </Button>
