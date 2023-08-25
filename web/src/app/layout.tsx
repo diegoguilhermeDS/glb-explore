@@ -21,8 +21,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Header />
-                <AuthProvider>{children}</AuthProvider>
+                <AuthProvider>
+                    <Header />
+                    {children}
+                </AuthProvider>
                 <script
                     type="module"
                     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"

@@ -10,9 +10,10 @@ import { LoginData, loginSchema } from "@/schemas/user.schema";
 import Input from "../../Input";
 import Button from "../../Button";
 import ViewPassword from "@/components/ViewPassword";
+import { RiLoader4Line } from "react-icons/ri";
 
 const FormLogin = () => {
-    const { login } = useAuth();
+    const { login, loadButton } = useAuth();
 
     const [viewPassword, setViewPassword] = useState(
         "password" as "text" | "email" | "password",
@@ -64,8 +65,16 @@ const FormLogin = () => {
             <Link href={""} className="text-end font-semibold text-violet-600">
                 Esqueceu sua senha?
             </Link>
-            <Button className="bg-emerald-400 border-emerald-400 hover:bg-emerald-800 hover:border-emerald-800 text-gray-900 hover:text-white shadow-md">
-                Entrar
+            <Button className="flex justify-center items-center bg-emerald-400 border-emerald-400 hover:bg-emerald-800 hover:border-emerald-800 text-gray-900 hover:text-white shadow-md">
+                {!loadButton ? (
+                    "Entrar"
+                ) : (
+                    <RiLoader4Line
+                        size={30}
+                        color="#fff"
+                        className="animate-spin"
+                    />
+                )}
             </Button>
             <span className="text-center">
                 não tem uma conta?{" "}

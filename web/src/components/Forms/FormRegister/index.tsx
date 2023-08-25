@@ -9,9 +9,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserRegisterData, userRegisterSchema } from "@/schemas/user.schema";
 import ViewPassword from "@/components/ViewPassword";
+import { RiLoader4Line } from "react-icons/ri";
 
 const FormRegister = () => {
-    const { handleRegister } = useAuth();
+    const { handleRegister, loadButton } = useAuth();
 
     const [viewPassword, setViewPassword] = useState(
         "password" as "text" | "email" | "password",
@@ -23,12 +24,10 @@ const FormRegister = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors, isDirty, isValid },
     } = useForm<UserRegisterData>({
         resolver: zodResolver(userRegisterSchema),
     });
-
-    // criar uma função para tratar os dados antes de chamar a handleRegister
 
     return (
         <form
@@ -78,7 +77,9 @@ const FormRegister = () => {
                     placeholder="Digite sua senha novamente"
                     type={viewConfirmPassword}
                     register={register("confirmPassword")}
-                    error={errors.confirmPassword && errors.confirmPassword.message}
+                    error={
+                        errors.confirmPassword && errors.confirmPassword.message
+                    }
                 />
                 <ViewPassword
                     type={viewConfirmPassword}
@@ -89,8 +90,23 @@ const FormRegister = () => {
                     }
                 />
             </div>
-            <Button className="bg-emerald-400 border-emerald-400 hover:bg-emerald-800 hover:border-emerald-800 text-gray-900 hover:text-white shadow-md">
-                Criar a conta
+            <Input
+                label="Avatar URL"
+                placeholder="Digite seu avatar url"
+                type="text"
+                register={register("avatarUrl")}
+                error={errors.avatarUrl && errors.avatarUrl.message}
+            />
+            <Button className="flex justify-center items-center bg-emerald-400 border-emerald-400 hover:bg-emerald-800 hover:border-emerald-800 text-gray-900 hover:text-white shadow-md">
+                {!loadButton ? (
+                    "Criar a conta"
+                ) : (
+                    <RiLoader4Line
+                        size={30}
+                        color="#fff"
+                        className="animate-spin"
+                    />
+                )}
             </Button>
             <span className="text-center">
                 já tem uma conta?{" "}
