@@ -21,5 +21,15 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "indent": ["error", 4],
+    "comma-spacing": ["error", { "before": false, "after": true }]
   },
+  'prettier/prettier': [
+    'error',
+    {
+      'endOfLine': 'auto',
+    }
+  ]
 };
