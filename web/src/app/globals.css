@@ -62,4 +62,8 @@
     .profile-icon {
         @apply flex justify-center w-12 h-12 p-2 items-center border-2 border-slate-700 rounded-full bg-slate-900 cursor-pointer;
     }
+
+    .link-nav {
+        @apply text-gray-900 font-semibold hover:underline;
+    }
 }
