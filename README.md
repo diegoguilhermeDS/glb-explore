@@ -33,7 +33,7 @@
 </p>
 
 ## 💻 Sobre o projeto
-  
+  Este repositório abriga um projeto full stack desenvolvido como parte de um desafio técnico proposto pela Bugaboo. O projeto, um gerenciador de arquivos GLB, utiliza uma abordagem abrangente, com o front-end construído em Next.js e o back-end em Nest.js.
 
 ## ⚙️ Funcionalidades
 
