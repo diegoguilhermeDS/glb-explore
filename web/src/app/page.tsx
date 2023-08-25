@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import FormLogin from "@/components/Forms/FormLogin";
-import { ModelViewer } from "@/components/ModelViewer";
 import { pathGLB } from "../../public/glb/glbs";
 
 export default function Home() {
@@ -21,9 +20,7 @@ export default function Home() {
         <>
             <main className="flex flex-col-reverse lg:flex-row justify-center items-center gap-32 lg:h-[85vh] px-4">
                 <div className="lg:w-1/4 h-2/3 flex justify-center items-center rounded overflow-hidden">
-                    <ModelViewer
-                        style={style}
-                        src={pathGLB["robot"]}
+                    <model-viewer
                         ar
                         ar-modes="webxr scene-viewer quick-look"
                         camera-controls
@@ -32,7 +29,9 @@ export default function Home() {
                         shadow-softness="0.93"
                         animation-name={animationRobot}
                         autoplay
-                    />
+                        src={pathGLB["robot"]}
+                        style={style}
+                    ></model-viewer>
                 </div>
                 <FormLogin />
             </main>
