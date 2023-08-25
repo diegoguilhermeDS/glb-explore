@@ -12,16 +12,7 @@ const Card = ({ glbFile }: CardProps) => {
     return (
         <li className="flex flex-col justify-between gap-3 w-[300px] h-[350px] p-2 rounded-md border-b-2 bg-slate-50 shadow-lg hover:shadow-2xl transition-shadow duration-300 ease">
             <div className="flex justify-center items-center  h-3/5 rounded-md p-1 border-b-[1px]">
-                <ModelViewer
-                    src={glbFile.path}
-                    ar
-                    ar-modes="webxr scene-viewer quick-look"
-                    camera-controls
-                    shadow-intensity="1.03"
-                    exposure={1.04}
-                    shadow-softness="0.93"
-                    autoplay
-                />
+                <ModelViewer src={glbFile.path} />
             </div>
             <h6>{glbFile.name}</h6>
             <Link
