@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
+import { glbsFiles } from "@/mock/glbsByUser";
 
 export default function Dashboard() {
     return (
@@ -16,11 +17,7 @@ export default function Dashboard() {
             <section className="flex flex-col it gap-5 container mx-auto">
                 <h5>Seus Arquivos GLB</h5>
                 <ul className="grid grid-cols-3 justify-items-center gap-y-8">
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+                    {glbsFiles.map((file) => <Card glbFile={file} key={file.id}/>)}
                 </ul>
             </section>
         </main>
