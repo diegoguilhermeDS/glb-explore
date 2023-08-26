@@ -1,29 +1,22 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { glbsFiles } from "@/mock/glbsByUser";
 import Card from "@/components/Card";
-import { cookies } from "next/headers";
-import { api } from "@/services/appi";
+import { useAuth } from "@/hooks/useAuth";
 import { User } from "./interface";
 
-async function getUser() {
-    const userId = cookies().get("user.id")?.value;
-    const token = cookies().get("user.token")?.value;
+export default function Dashboard() {
+    const { retrieveUser } = useAuth();
+    const [user, setUser] = useState<User>({} as User);
 
-    const res = await api.get(`users/${userId}`, {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    });
-
-    const user: User = res.data;
-
-    return user;
-}
-
-export default async function Dashboard() {
-
-    const user = await getUser();
+    useEffect(() => {
+        (async () => {
+            const user = await retrieveUser();
+            setUser(user!);
+        })();
+    }, [retrieveUser]);
 
     return (
         <main className="flex flex-col gap-14 pb-20 bg-slate-100 px-4">
